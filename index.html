@@ -9,27 +9,38 @@
 
 <body style="margin:0; overflow:hidden;">
 <a-scene embedded arjs>
-  
+
   <a-marker type="pattern" url="pattern.patt">
 
-    <!-- 花吹雪 -->
+    <!-- 花びら① -->
     <a-image src="petal.png"
-             position="0 0.5 0"
-             scale="1.5 1.5 1.5"
-             animation="property: position; 
-                        from: 0 1 0; 
-                        to: 0 -1 0; 
-                        dur: 6000; 
+             width="0.15" height="0.15"
+             position="-0.2 1 0"
+             animation="property: position;
+                        from: -0.2 1 0;
+                        to: -0.2 -0.5 0;
+                        dur: 6000;
+                        loop: true">
+    </a-image>
+
+    <!-- 花びら② -->
+    <a-image src="petal.png"
+             width="0.12" height="0.12"
+             position="0.2 1.2 0"
+             animation="property: position;
+                        from: 0.2 1.2 0;
+                        to: 0.2 -0.5 0;
+                        dur: 7000;
                         loop: true">
     </a-image>
 
     <!-- 蝶 -->
     <a-image src="butterfly.png"
-             position="0.5 0.3 0"
-             scale="0.5 0.5 0.5"
+             width="0.35" height="0.35"
+             position="0.4 0.6 0"
              animation="property: position;
-                        from: 0.5 0.3 0;
-                        to: -0.5 0.4 0;
+                        from: 0.4 0.6 0;
+                        to: -0.4 0.8 0;
                         dur: 5000;
                         loop: true;
                         dir: alternate">
