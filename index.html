@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>百年桜 AR</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin:0; overflow:hidden;">
+<a-scene embedded arjs>
+  
+  <a-marker type="pattern" url="pattern.patt">
+
+    <!-- 花吹雪 -->
+    <a-image src="petal.png"
+             position="0 0.5 0"
+             scale="1.5 1.5 1.5"
+             animation="property: position; 
+                        from: 0 1 0; 
+                        to: 0 -1 0; 
+                        dur: 6000; 
+                        loop: true">
+    </a-image>
+
+    <!-- 蝶 -->
+    <a-image src="butterfly.png"
+             position="0.5 0.3 0"
+             scale="0.5 0.5 0.5"
+             animation="property: position;
+                        from: 0.5 0.3 0;
+                        to: -0.5 0.4 0;
+                        dur: 5000;
+                        loop: true;
+                        dir: alternate">
+    </a-image>
+
+  </a-marker>
+
+  <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>
