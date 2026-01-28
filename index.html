@@ -2,22 +2,44 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>百年桜 AR - 接続テスト</title>
+  <title>百年桜 AR - 完成版</title>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
 </head>
 
 <body style="margin:0; overflow:hidden;">
   <a-scene embedded arjs="debugUIEnabled: false;">
     
     <a-marker type="pattern" url="pattern.patt">
-      <a-box position='0 0.5 0' material='color: red;'></a-box>
       
-      <a-image src="butterfly.png" position="0 1 0" scale="1 1 1"></a-image>
+      <a-entity 
+        position="0 2 0" 
+        particle-system="
+          preset: dust; 
+          color: #FFC0CB, #FFFFFF; 
+          particleCount: 800; 
+          size: 1.5; 
+          maxAge: 3; 
+          velocityValue: 0 -1 0; 
+          velocitySpread: 1.5 0.5 1.5; 
+          accelerationValue: 0 -0.2 0;
+          image: petal.png;"> </a-entity>
+
+      <a-image src="butterfly.png"
+               position="0 0.5 0"
+               scale="0.6 0.6 0.6"
+               animation="property: position;
+                          from: 0.8 0.5 0.5;
+                          to: -0.8 0.8 -0.5;
+                          dur: 4000;
+                          loop: true;
+                          dir: alternate">
+      </a-image>
+
     </a-marker>
 
     <a-entity camera></a-entity>
   </a-scene>
 </body>
 </html>
-
