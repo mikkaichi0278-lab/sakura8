@@ -2,50 +2,55 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>百年桜 AR - A3試作NFT版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>百年桜 AR - NFT確定版</title>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
 
-<body style="margin:0; overflow:hidden;">
-  <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-    
+<body style="margin: 0; overflow: hidden;">
+  <div class="arjs-loader" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 9999; display: flex; justify-content: center; align-items: center;">
+    <div style="text-align: center; color: white; font-family: sans-serif;">Loading, please wait...</div>
+  </div>
+
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
     <a-nft
       type="nft"
-      url="sakura" 
+      url="https://mikkaichi0278-lab.github.io/sakura8/sakura"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      
-      <a-image src="butterfly.png"
-               position="50 50 -50"
-               scale="50 50 50"
-               animation="property: position; from: 100 50 50; to: -100 150 -50; dur: 5000; loop: true; dir: alternate">
-      </a-image>
+      <a-image
+        src="butterfly.png"
+        position="100 0 -150"
+        scale="100 100 100"
+        animation="property: position; from: 150 0 -100; to: -150 100 -200; dur: 6000; loop: true; dir: alternate"
+      ></a-image>
 
-      <a-image src="petal.png" scale="20 20 20"
-               animation="property: position; from: -50 200 -50; to: -10 -50 50; dur: 3000; loop: true; easing: linear">
+      <a-image src="petal.png" scale="30 30 30" position="0 200 -100"
+               animation="property: position; from: -100 300 -50; to: 50 -100 50; dur: 4000; loop: true; easing: linear">
       </a-image>
-      <a-image src="petal.png" scale="15 15 15"
-               animation="property: position; from: 50 200 50; to: 10 -50 -50; dur: 4500; loop: true; easing: linear">
-      </a-image>
-      <a-image src="petal.png" scale="20 20 20"
-               animation="property: position; from: 0 200 0; to: -30 -50 0; dur: 3500; loop: true; easing: linear">
-      </a-image>
-      <a-image src="petal.png" scale="10 10 10"
-               animation="property: position; from: -80 200 80; to: 30 -50 -80; dur: 5000; loop: true; easing: linear">
-      </a-image>
-      <a-image src="petal.png" scale="20 20 20"
-               animation="property: position; from: 80 200 -80; to: -20 -50 20; dur: 4000; loop: true; easing: linear">
+      <a-image src="petal.png" scale="20 20 20" position="50 200 -150"
+               animation="property: position; from: 150 300 -150; to: -50 -100 0; dur: 5500; loop: true; easing: linear">
       </a-image>
 
     </a-nft>
 
     <a-entity camera></a-entity>
   </a-scene>
+
+  <script>
+    window.addEventListener('arjs-nft-loaded', () => {
+      document.querySelector('.arjs-loader').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
-
 
