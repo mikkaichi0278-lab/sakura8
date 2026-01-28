@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>百年桜 AR - 完成版（位置調整済）</title>
+  <title>百年桜 AR - 安定版</title>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
 </head>
 
 <body style="margin:0; overflow:hidden;">
@@ -14,16 +12,26 @@
     
     <a-marker type="pattern" url="https://mikkaichi0278-lab.github.io/sakura8/pattern.patt">
       
-     
       <a-image src="butterfly.png"
-               position="0 0.2 0"
-               scale="0.5 0.5 0.5"
-               animation="property: position;
-                          from: 0.3 0.2 0;
-                          to: -0.3 0.4 0;
-                          dur: 4000;
-                          loop: true;
-                          dir: alternate">
+               position="0 0.5 0"
+               scale="0.6 0.6 0.6"
+               animation="property: position; from: 0.5 0.5 0.3; to: -0.5 0.7 -0.3; dur: 5000; loop: true; dir: alternate">
+      </a-image>
+
+      <a-image src="petal.png" scale="0.2 0.2 0.2"
+               animation="property: position; from: -0.3 1.5 -0.3; to: -0.1 -0.5 0.3; dur: 3000; loop: true; easing: linear">
+      </a-image>
+      <a-image src="petal.png" scale="0.15 0.15 0.15"
+               animation="property: position; from: 0.3 1.5 0.3; to: 0.1 -0.5 -0.3; dur: 4500; loop: true; easing: linear">
+      </a-image>
+      <a-image src="petal.png" scale="0.2 0.2 0.2"
+               animation="property: position; from: 0 1.5 0; to: -0.3 -0.5 0; dur: 3500; loop: true; easing: linear">
+      </a-image>
+      <a-image src="petal.png" scale="0.1 0.1 0.1"
+               animation="property: position; from: -0.5 1.5 0.5; to: 0.3 -0.5 -0.5; dur: 5000; loop: true; easing: linear">
+      </a-image>
+      <a-image src="petal.png" scale="0.2 0.2 0.2"
+               animation="property: position; from: 0.5 1.5 -0.5; to: -0.2 -0.5 0.2; dur: 4000; loop: true; easing: linear">
       </a-image>
 
     </a-marker>
@@ -32,5 +40,3 @@
   </a-scene>
 </body>
 </html>
-
-
