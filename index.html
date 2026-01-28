@@ -3,40 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>百年桜 AR - 最終テスト</title>
+  <title>百年桜 AR - 完成版テスト</title>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
   <div class="arjs-loader" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 9999; display: flex; justify-content: center; align-items: center;">
-    <div style="text-align: center; color: white; font-family: sans-serif;">
-      桜のデータを読み込んでいます...<br><br>
-      <small>※10秒ほどかかる場合があります</small>
-    </div>
+    <div style="text-align: center; color: white; font-family: sans-serif;">桜のデータを読み込んでいます...</div>
   </div>
 
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-  >
+  <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+    
     <a-nft
       type="nft"
-      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex" 
+      url="sakura" 
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <a-image src="butterfly.png" position="100 0 -150" scale="150 150 150"
+      <a-image src="butterfly.png" position="100 0 -150" scale="100 100 100"
                animation="property: position; from: 150 0 -100; to: -150 100 -200; dur: 6000; loop: true; dir: alternate">
       </a-image>
 
-      <a-image src="petal.png" scale="50 50 50" position="0 200 -100"
-               animation="property: position; from: -100 300 -50; to: 50 -100 50; dur: 4000; loop: true; easing: linear">
+      <a-image src="petal.png" scale="30 30 30"
+               animation="property: position; from: -50 200 -50; to: 20 -100 50; dur: 3000; loop: true; easing: linear">
       </a-image>
+
     </a-nft>
 
     <a-entity camera></a-entity>
@@ -49,6 +43,5 @@
   </script>
 </body>
 </html>
-
 
 
