@@ -15,32 +15,35 @@
 
   <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     
-  <a-nft
+ <a-nft
       type="nft"
       url="https://mikkaichi0278-lab.github.io/sakura8/sakura"
       smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
+      smoothCount="20" 
+      smoothTolerance=".05"
+      smoothThreshold="10"
     >
       <a-image
         src="butterfly.png"
-        position="100 100 30" 
+        position="100 100 50" 
         scale="250 250 250"
         rotation="0 0 0" 
-        animation="property: position; from: 100 100 30; to: 100 150 80; dur: 4000; loop: true; dir: alternate"
+        animation="property: position; from: 100 100 50; to: 120 160 80; dur: 5000; loop: true; dir: alternate; easing: easeInOutQuad"
       ></a-image>
 
-      <a-image
-        src="petal.png"
-        position="100 250 50"
-        scale="150 150 150"
-        rotation="0 0 0"
-        animation="property: position; from: 150 350 50; to: 50 0 100; dur: 7000; loop: true; easing: linear"
-      ></a-image>
+      <a-image src="petal.png" scale="100 100 100" rotation="0 0 0"
+               animation="property: position; from: 50 400 30; to: 200 -100 80; dur: 6000; loop: true; easing: linear">
+      </a-image>
+
+      <a-image src="petal.png" scale="80 80 80" rotation="0 0 0"
+               animation="property: position; from: 200 450 60; to: -50 -50 40; dur: 8000; loop: true; easing: linear">
+      </a-image>
+
+      <a-image src="petal.png" scale="120 120 120" rotation="0 0 0"
+               animation="property: position; from: 300 350 20; to: 250 -200 100; dur: 5000; loop: true; easing: linear">
+      </a-image>
 
     </a-nft>
-
     <a-entity camera></a-entity>
   </a-scene>
 
@@ -51,6 +54,7 @@
   </script>
 </body>
 </html>
+
 
 
 
