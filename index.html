@@ -15,21 +15,29 @@
 
   <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     
-    <a-nft
+   <a-nft
       type="nft"
-      url="https://mikkaichi0278-lab.github.io/sakura8/sakura" 
+      url="https://mikkaichi0278-lab.github.io/sakura8/sakura"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <a-image src="butterfly.png" position="100 0 -150" scale="100 100 100"
-               animation="property: position; from: 150 0 -100; to: -150 100 -200; dur: 6000; loop: true; dir: alternate">
-      </a-image>
+      <a-image
+        src="butterfly.png"
+        position="150 150 50" 
+        scale="200 200 200"
+        rotation="0 0 0"
+        animation="property: position; from: 120 120 50; to: 180 180 100; dur: 4000; loop: true; dir: alternate"
+      ></a-image>
 
-      <a-image src="petal.png" scale="30 30 30"
-               animation="property: position; from: -50 200 -50; to: 20 -100 50; dur: 3000; loop: true; easing: linear">
-      </a-image>
+      <a-image
+        src="petal.png"
+        position="150 200 120"
+        scale="150 150 150"
+        rotation="0 0 0"
+        animation="property: position; from: 250 400 120; to: 50 -100 150; dur: 6000; loop: true; easing: linear"
+      ></a-image>
 
     </a-nft>
 
@@ -43,6 +51,7 @@
   </script>
 </body>
 </html>
+
 
 
 
